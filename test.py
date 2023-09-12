@@ -6,8 +6,8 @@ import decimal
 import PESrank
 import os
 
-def main(password, x):
-    rank, explain = PESrank.main(password, os.getcwd(), x)
+def main(password, country):
+    rank, explain, country_indicator = PESrank.main(password, os.getcwd(), country, '5000')
     return rank
 #     n=905*(10**6)
 #     ex=0
