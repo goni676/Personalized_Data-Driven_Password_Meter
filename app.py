@@ -16,7 +16,7 @@ def new_page():
     return render_template('generator.html')
 
 
-@app.route('/reverse_name', methods=['POST'])
+@app.route('/password_meter', methods=['POST'])
 def reverse_name():
     data = request.json
     password = data.get('password', '')
