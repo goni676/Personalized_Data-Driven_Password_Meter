@@ -22,7 +22,6 @@ def reverse_name():
     password = data.get('password', '')
     username = data.get('username', '')
     country = data.get('country', '')
-    print("hi")
     rank, feedback1, feedback2, feedback3, feedback4, feedback5, indicators, info_list = test.main_index(username,
                                                                                                          password,
                                                                                                          country)
