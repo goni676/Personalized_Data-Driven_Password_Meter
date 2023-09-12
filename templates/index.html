@@ -10,7 +10,7 @@
    <style>
     body {
     font-family: 'Libre Franklin', sans-serif;
-        font-weight: 300;
+    font-weight: 300; 
     font-size: 12px;
     text-align: center;
     display: flex;
@@ -185,7 +185,7 @@
         font-weight: 200;
         text-align: left;
         font-size: 13px;
-        margin-left: 350px;
+        margin-left: 25%;
         width: 400px;
         height: 400px;
         padding: 15px;
@@ -232,7 +232,7 @@
         width: 230px;
         border-radius: 10px;
         margin-top: 100px;
-        margin-left: 675px;
+        margin-left: 37%;
         z-index: 2;
         transition: width 0.5s ease-in-out;
         border: 0px solid #1c9600; /* Border */
@@ -303,7 +303,7 @@
     color: rgba(1, 8, 56, 0.71);
     {#justify-content: center;#}
     display: none;
-    margin-left: 480px;
+    margin-left: 35%;
     width: 500px;
     height: 200px;
     position: fixed;
@@ -569,9 +569,9 @@
 <option value="Tuvalu">Tuvalu</option>
 <option value="Uganda">Uganda</option>
 <option value="Ukraine">Ukraine</option>
-<option value="United Arab Emirates">United Arab Emirates</option>
-<option value="United Kingdom">United Kingdom</option>
-<option value="United States">United States</option>
+<option value="UAE">United Arab Emirates</option>
+<option value="UK">United Kingdom</option>
+<option value="US">United States</option>
 <option value="Uruguay">Uruguay</option>
 <option value="Uzbekistan">Uzbekistan</option>
 <option value="Vanuatu">Vanuatu</option>
@@ -619,10 +619,13 @@
             const left_cover = document.getElementById('left_cover');
             const right_cover = document.getElementById('right_cover');
             const smiley = document.getElementById('smiley');
+            const tmp_country = document.getElementById('country')
+            var country = tmp_country.value;
+                            console.log(country);
             $.ajax({
                 type: 'POST',
                 url: '/reverse_name',
-                data: JSON.stringify({ "username": username, "password":password}),
+                data: JSON.stringify({"username": username, "password":password, "country": country}),
                 contentType: 'application/json',
                 success: function (response) {
                     const rank = response.rank;
@@ -728,24 +731,6 @@
             closeButton5.addEventListener('click', () => {
                 toggleButtonDisplay(infoContainer5);
             });
-             document.addEventListener('click', (event) => {
-                 if (event.target !== symbol2 && !infoContainer2.contains(event.target)) {
-                     infoContainer2.style.display = 'none';
-
-              }
-                if (event.target !== symbol3 && !infoContainer3.contains(event.target)) {
-                  infoContainer3.style.display = 'none';
-
-                }
-                 if (event.target !== symbol4 && !infoContainer4.contains(event.target)) {
-                    infoContainer4.style.display = 'none';
-
-                 }
-                 if (event.target !== symbol5 && !infoContainer5.contains(event.target)) {
-                     infoContainer5.style.display = 'none';
-            }
-
-        });
          });
         function updateMeter(rank, right_cover, left_cover) {
             const val = rank / 70
