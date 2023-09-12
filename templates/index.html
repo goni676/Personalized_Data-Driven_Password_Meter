@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Reverse Name</title>
+    <title>Password Meter</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -645,7 +645,7 @@
                             console.log(country);
             $.ajax({
                 type: 'POST',
-                url: '/reverse_name',
+                url: '/password_meter',
                 data: JSON.stringify({"username": username, "password":password, "country": country}),
                 contentType: 'application/json',
                 success: function (response) {
