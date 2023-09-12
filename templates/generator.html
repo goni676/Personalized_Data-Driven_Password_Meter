@@ -19,9 +19,9 @@
     text-align: center;
     display: flex;
     padding: 0px;
-    background-color: #dadada;; /* Set the background color */
-    background-repeat: no-repeat; /* Prevent the background image from repeating */
-    background-size: cover; /* Scale the background image to cover the entire body */
+    background-color: #dadada;;
+    background-repeat: no-repeat; 
+    background-size: cover; 
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -65,7 +65,7 @@
 
     label {
         font-family: 'Raleway', sans-serif;
-        animation: fadeIn 2s ease-in-out forwards; /* Add animation */
+        animation: fadeIn 2s ease-in-out forwards; 
         font-style: normal;
         font-weight: 200;
         display: block;
@@ -75,7 +75,7 @@
         margin-right: 400px;
     }
     input[type="number"] {
-        animation: fadeIn 2s ease-in-out forwards; /* Add animation */
+        animation: fadeIn 2s ease-in-out forwards; 
         background-color: #ffffffc1;
         padding: 8px;
         width: 200px;
@@ -225,14 +225,10 @@
         border-radius: 80px;
         cursor: pointer;
         float: right;
-        left: 20%;
-        right: 50%;
-        margin-top: 60px;
-        margin-bottom: 250px;
-        top: 90%;
-        margin-right: 125px;
+        margin-right: 5%;
+        margin-top: 22%;
         transition: background-color 0.3s ease, transform 0.3s ease;
-        z-index: 2;
+        z-index: 0;
 
     }
         button[type="show"]:hover {
@@ -244,7 +240,7 @@
     .container {
         text-align: center;
         background-color: black;
-        background-image: url('https://drive.google.com/uc?export=download&id=1tnOhI9iAgCy3ftoXEyU3c5e5fhwUBXA6'); /* Set the background image */
+        background-image: url('https://drive.google.com/uc?export=download&id=1tnOhI9iAgCy3ftoXEyU3c5e5fhwUBXA6'); 
         background-repeat: no-repeat;
         background-size: cover;
         justify-content: center;
@@ -260,10 +256,10 @@
     .square-container {
         cursor: pointer;
         background-color: rgba(27, 56, 196, 0);
-        animation: fadeIn 1s ease-in-out forwards; /* Add animation */
+        animation: fadeIn 1s ease-in-out forwards; 
         display: flex;
-        flex-direction: column; /* Stack elements vertically */
-        justify-content: center; /* Center horizontally */
+        flex-direction: column;
+        justify-content: center; 
         align-items: center;
         font-family: 'Libre Franklin', sans-serif;
         font-weight: 200;
@@ -291,10 +287,10 @@
     }
 
     select {
-        animation: fadeIn 2s ease-in-out forwards; /* Add animation */
-        appearance: none; /* Remove default appearance */
-        -webkit-appearance: none; /* For Safari */
-        -moz-appearance: none; /* For Firefox */
+        animation: fadeIn 2s ease-in-out forwards; 
+        appearance: none; 
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
         font-family: 'Raleway', sans-serif;
         background-color: #ffffffc1;
         font-size: 13px;
@@ -313,20 +309,20 @@
         left: 0;
         right: 0;
         bottom: 0;
-        box-shadow: inset 40px 0px 70px rgba(0, 0, 0, 0.5); /* Adjust shadow properties */
-        border-radius: 10px; /* Optional: Match the container's border radius */
+        box-shadow: inset 40px 0px 70px rgba(0, 0, 0, 0.5); 
+        border-radius: 10px;
     }
     .meter {
-        animation: fadeIn 1s ease-in-out forwards; /* Add animation */
+        animation: fadeIn 1s ease-in-out forwards; 
         object-fit: cover;
         position: absolute;
         display: none;
         height: 15px;
         width: 230px;
         border-radius: 10px;
-        margin-top: 26px;
-        margin-left: 670px;
-        z-index: 2;
+        margin-top: 2%;
+        margin-left: 35%;
+        z-index: 1;
         transition: width 0.5s ease-in-out;
         border: 0px solid #1c9600; /* Border */
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.745);
@@ -380,11 +376,10 @@
     font-size: 19px;
     }
 
-
 .info-symbol {
     display: none;
     font-size: 18px;
-    color: #007BFF; /* Change the color to your preference */
+    color: #007BFF; 
     margin-left: 5px;
 }
 
@@ -422,21 +417,21 @@
     z-index: 1000;
 }
     .overlay {
-        animation: fadeIn 0.5s ease-in-out forwards; /* Add animation */
+        animation: fadeIn 0.5s ease-in-out forwards; 
         display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 11, 38, 0.7); /* Adjust the alpha value to control darkness */
-        z-index: 999; /* Ensure the overlay is on top of everything else */
+        background-color: rgba(0, 11, 38, 0.7); 
+        z-index: 999; 
     }
    .process {
        animation: fadeIn 0.5s ease-in-out forwards;
        display: none;
        justify-content: center;
-       margin-top: 5px;
+       margin-top: 2%;
        background-color: rgb(37, 45, 61);
        text-align: center;
        line-height: 20px;
@@ -545,8 +540,8 @@
                     const symbols_list = response.symbols_list;
                     const lucky_list = response.lucky_list;
                     const lucky_str = response.lucky_str;
-                    console.log(ranks);
                     const titleContainer = $('#titleContainer');
+                    titleContainer.css({'margin-top': '12%', 'margin-left': '47%'});
                     titleContainer.html(`<p_2> Suggested Password:  </p_2> <p_4> ${lucky_str}`);
                     const content = ["Your initial password.", "Quote initials with random capitalization were " +
                     "added to the starter password, padded with the release year's digits: "+quote_release, "Two randomly selected symbols were added to the existing password at random positions.",
@@ -622,7 +617,8 @@
             var main_container = document.createElement("div");
             main_container.style.display = 'block';
             main_container.className = "square-container";
-            main_container.style.marginTop = "145px";
+            main_container.style.marginTop = "11%";
+            main_container.style.marginLeft = "35%";
             for (let i = 0; i < 4; i++) {
                 var sub_container = create_sub_process(titles_list[i], content[i], i, buttons);
                 main_container.appendChild(sub_container);
@@ -636,16 +632,16 @@
                     var nextButton = createNextButton(i);
 
                     if(i == 0){
-                        sub_container.style.marginLeft="120px";
+                        sub_container.style.marginLeft="30%";
                         main_container.appendChild(lineBreak1);
                         main_container.appendChild(percentage_container);
                     }
                     if (i==1){
-                        percentage_container.style.marginTop="59px";
+                        percentage_container.style.marginTop="12%";
                         main_container.appendChild(percentage_container);
                     }
                     if(i==2){
-                        percentage_container.style.marginTop = "202px"
+                        percentage_container.style.marginTop = "45%"
                         main_container.appendChild(percentage_container);
 
                     }
@@ -654,7 +650,7 @@
 
                 }
                 else{
-                    percentage_container.style.marginTop = "322px"
+                    percentage_container.style.marginTop = "75%"
                     main_container.appendChild(percentage_container);
                     sub_container.style.marginLeft="27px";
                 }
