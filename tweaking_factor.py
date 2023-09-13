@@ -1,8 +1,17 @@
 import decimal
 import os
 import pandas as pd
-import BS  # Import the BS module or replace with the appropriate import for BS
+import BS  
 import numpy as np
+    """
+    general decription:
+    The code computes the adjustment factor for each country by selecting the [100, 500, 1000, 5000] highest-rated items in each dimension.
+    
+    Tweak Factor:
+    For each dimension, we determined the 'tweak factor.' Let's consider a sub-password k from country i in dimension j. 
+    We'll denote its probability in this dimension and country as p, and its probability in the same dimension within the general dataset as p_0. 
+    consider 1-(p-p_0) as the sub-password's tweak factor. The tweak factor for dimension j is defined as the product of the tweak factors for all its associated passwords.
+    """
 
 def load_data(file_path):
     """
@@ -24,7 +33,7 @@ def load_data(file_path):
 
 def n_most_popular(data, n):
     """
-    Get the top n most popular items from the data.
+    Retrieve the n highest-rated items from the dataset, determined by their distribution.
     """
     sorted_data = sorted(data, key=lambda x: x[1], reverse=True)[:int(n)]
     sorted_ascii = sorted(sorted_data, key=lambda x: x[0])
@@ -50,7 +59,7 @@ def calc_tweak(file_path_general, file_path_country, top_country_path, n):
 
 
 def main_tweaking():
-    countries = ["china"]
+    countries = ["china", "france", "germany", "uk", "spain"]
     main_path = os.getcwd()
     tests = ["100", "500", "1000", "5000"]
     tweak_dict = {}  # Dictionary to store DataFrames
