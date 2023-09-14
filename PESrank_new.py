@@ -96,16 +96,21 @@ def unLeetWord(word):
     return word, str(tuple(sorted(lst)))
 
 
-def main(password, path, country, top_values):
-    country_model = 0
-    if country in ['france', 'germany', 'spain', 'uk', 'china']:
-        r, explain = get_path(password, path, country, top_values, is_general=False)
+def main(password, path, top_values, country=None):
+    country_indicator = True
+    countries = ['france', 'germany', 'spain', 'uk', 'china', 'scandinivian']
+    r = -5
+    explain = []
+    if (country is not None) and (country in countries):
+        r, explain = get_path(password, path, country, top_values,country_indicator, is_general=False)
         if r == -5:
-            r, explain = get_path(password, path, country, top_values, is_general=True)
+            r, explain = get_path(password, path, country, top_values, country_indicator, is_general=True)
+            country_indicator = False
     else:
-        r, explain = get_path(password, path, country, top_values, is_general=True)
+        country_indicator = False
+        r, explain = get_path(password, path, country, top_values, country_indicator, is_general=True)
     out_file(password, r)
-    return r
+    return r, explain, country_indicator
 
 
 def get_path(password, path, country, top_values, is_general=False):
