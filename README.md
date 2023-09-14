@@ -11,13 +11,13 @@ Country-based personalized data-driven password meter, based on [PESrank model](
   ```bash
   python app.py
   ```
-You should see output indicating that the Flask development server is running.
-Here's an example of what the terminal output might look like:
-```bash
- * Serving Flask app "app" (lazy loading)
- * Environment: development
- * Debug mode: on
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+* You should see output indicating that the Flask development server is running.
+  Here's an example of what the terminal output might look like:
+  ```bash
+   * Serving Flask app "app" (lazy loading)
+   * Environment: development
+   * Debug mode: on
+   * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 ## Accessing the Flask Application
 * Once you see this output, your Flask server is up and running and ready to handle incoming HTTP requests.
