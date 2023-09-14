@@ -1,5 +1,7 @@
 # spp_password_meter
-Country-based personalized data-driven password meter, based on [PESrank model](https://github.com/lirondavid/PESrank)
+Country-based personalized data-driven password meter, based on [PESrank model](https://github.com/lirondavid/PESrank).
+repository link: (https://github.com/goni676/spp_password_meter)
+
 ## Installation
 * Unzip PPESrank-master into a directory of your choise.
 * Run:
@@ -26,5 +28,6 @@ Country-based personalized data-driven password meter, based on [PESrank model](
 
 ## Flask Application Illustration
 In the following [video](https://app.usebubbles.com/rcwAKvEDhag61BCBnMADBR), you can witness the process of entering the password "Chelsea" within a country that lacks a corresponding model, initially set to 'Argentina' as the selected country. Subsequently, the video showcases the resulting score after changing the country to the UK, with 'Chelsea' recognized as one of the frequently used passwords.
+
 
 
