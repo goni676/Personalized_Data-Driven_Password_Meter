@@ -1,6 +1,6 @@
 # spp_password_meter
-Country-based personalized data-driven password meter, based on [PESrank model](https://github.com/lirondavid/PESrank).
-repository link: (https://github.com/goni676/spp_password_meter)
+* Country-based personalized data-driven password meter, based on [PESrank model](https://github.com/lirondavid/PESrank).
+* repository link: https://github.com/goni676/spp_password_meter
 
 ## Installation
 * Unzip PPESrank-master into a directory of your choise.
