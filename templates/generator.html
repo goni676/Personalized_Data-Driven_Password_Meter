@@ -225,8 +225,8 @@
         border-radius: 80px;
         cursor: pointer;
         float: right;
-        margin-right: 5%;
-        margin-top: 15%;
+        margin-right: 40%;
+        margin-top: 13%;
         transition: background-color 0.3s ease, transform 0.3s ease;
         z-index: 0;
     
@@ -320,12 +320,12 @@
         height: 15px;
         width: 230px;
         border-radius: 10px;
-        margin-top: 2%;
-        margin-left: 35%;
-        z-index: 1;
+        margin-top: 3%;
+        margin-left: 630px;
         transition: width 0.5s ease-in-out;
         border: 0px solid #1c9600; 
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.745);
+        z-index: 0;
     }
     
     .arrow {
@@ -611,7 +611,7 @@
                     const lucky_list = response.lucky_list;
                     const lucky_str = response.lucky_str;
                     const titleContainer = $('#titleContainer');
-                    titleContainer.css({'margin-top': '12%', 'margin-left': '47%', 'line-height': '25px'});
+                    titleContainer.css({'margin-top': '3px', 'margin-right': '70px', 'line-height': '25px'});
                     titleContainer.html(`<p_2> Suggested Password:  </p_2> <br> <p_4> ${lucky_str}`);
                     
                     const content = ["Your initial password.", "Quote initials with random capitalization were " +
