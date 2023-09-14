@@ -20,6 +20,7 @@ Here's an example of what the terminal output might look like:
  * Debug mode: on
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
+## Accessing the Flask Application
 Once you see this output, your Flask server is up and running and ready to handle incoming HTTP requests.
 To access the Flask application, open a web browser and enters the URL of the application in the address bar. 
 This URL typically consists of the host and port where your Flask server is running (e.g., http://127.0.0.1:5000/ or http://localhost:5000/).
