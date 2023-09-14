@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import BS  
 import numpy as np
-    """
+"""
     general decription:
     The code computes the adjustment factor for each country by selecting the [100, 500, 1000, 5000] highest-rated items in each dimension.
     
@@ -11,7 +11,7 @@ import numpy as np
     For each dimension, we determined the 'tweak factor.' Let's consider a sub-password k from country i in dimension j. 
     We'll denote its probability in this dimension and country as p, and its probability in the same dimension within the general dataset as p_0. 
     consider 1-(p-p_0) as the sub-password's tweak factor. The tweak factor for dimension j is defined as the product of the tweak factors for all its associated passwords.
-    """
+"""
 
 def load_data(file_path):
     """
