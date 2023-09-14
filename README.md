@@ -1,4 +1,5 @@
-# spp_password_meter
+# Personalized Data-Driven Password Meter
+Due to size limitations, the source code can be found [HERE](https://drive.google.com/file/d/1VRcfzOMCP8umvjfgPeT-CHRRhqzPX7KT/view?usp=share_link).
 * Country-based personalized data-driven password meter, based on [PESrank model](https://github.com/lirondavid/PESrank).
 * repository link: https://github.com/goni676/spp_password_meter
 
