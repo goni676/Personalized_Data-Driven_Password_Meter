@@ -102,7 +102,7 @@ def main(password, path, top_values, country=None):
     r = -5
     explain = []
     if (country is not None) and (country in countries):
-        r, explain = get_path(password, path, country, top_values,country_indicator, is_general=False)
+        r, explain = get_path(password, path, country, top_values, country_indicator, is_general=False)
         if r == -5:
             r, explain = get_path(password, path, country, top_values, country_indicator, is_general=True)
             country_indicator = False
@@ -113,25 +113,27 @@ def main(password, path, top_values, country=None):
     return r, explain, country_indicator
 
 
-def get_path(password, path, country, top_values, is_general=False):
+def get_path(password, path, country, top_values, country_indicator, is_general=False):
     paths = [os.path.join(path, f"{country}{i}_{top_values}.txt") for i in range(1, 6)]
 
     if is_general:
         paths = [os.path.join(path, f"a{i}.txt") for i in range(1, 6)]
         L1 = rank_config.config.get(f'L1')
         L2 = rank_config.config.get(f'L2')
-        distribution = tweak[country][top_values]
+        if country_indicator:
+            distribution = tweak[country][top_values]
+        else:
+            distribution = None
     else:
         L1 = rank_config.config.get(f'L1_{country}')
         L2 = rank_config.config.get(f'L2_{country}')
-        distribution = 0
+        distribution = None
 
     return rank(1 if is_general else 0, password, path, paths, L1, L2, distribution)
 
 
 def rank(indicator, password, path, paths, L1, L2, distribution):
     a1_path, a2_path, a3_path, a4_path, a5_path = paths
-    print(a1_path)
     first = True
     last = True
     f = len(password)
@@ -155,13 +157,13 @@ def rank(indicator, password, path, paths, L1, L2, distribution):
                     unLeetP2 = p[i:j]
                     P3 = p[j:]
                     pp1 = BS.main(a1_path, P1)
-                    if indicator and pp1 is not None:
+                    if indicator and distribution and pp1 is not None:
                         pp1 = float(pp1) * distribution['a1']
                     pp2 = BS.main(a2_path, unLeetP2)
-                    if indicator and pp2 is not None:
+                    if indicator and distribution and pp2 is not None:
                         pp2 = float(pp2) * distribution['a2']
                     pp3 = BS.main(a3_path, P3)
-                    if indicator and pp3 is not None:
+                    if indicator and distribution and pp3 is not None:
                         pp3 = float(pp3) * distribution['a3']
                     if (pp1 != None and pp2 != None and pp3 != None):
                         if float(pp1) * float(pp2) * float(pp3) > maxProb:
@@ -177,10 +179,10 @@ def rank(indicator, password, path, paths, L1, L2, distribution):
             pos2 = "()"
             if maxProb > 0:
                 pp4 = BS.main4(a4_path, pos1)
-                if indicator and pp4 is not None:
+                if indicator and distribution and pp4 is not None:
                     pp4 = float(pp4) * distribution['a4']
                 pp5 = BS.main4(a5_path, pos2)
-                if indicator and pp5 is not None:
+                if indicator and distribution and pp5 is not None:
                     pp5 = float(pp5) * distribution['a5']
                 prob = maxProb * float(pp4) * float(pp5)
                 L = ESrank.main2(L1, L2, prob, 14)
@@ -217,19 +219,19 @@ def rank(indicator, password, path, paths, L1, L2, distribution):
             unShiftP2, pos1 = unShiftWord(P2)
             unLeetP2, pos2 = unLeetWord(unShiftP2)
             pp1 = BS.main(a1_path, P1)
-            if indicator and pp1 is not None:
+            if indicator and distribution and pp1 is not None:
                 pp1 = float(pp1) * distribution['a1']
             pp2 = BS.main(a2_path, unLeetP2)
-            if indicator and pp2 is not None:
+            if indicator and distribution and pp2 is not None:
                 pp2 = float(pp2) * distribution['a2']
             pp3 = BS.main(a3_path, P3)
-            if indicator and pp3 is not None:
+            if indicator and distribution and pp3 is not None:
                 pp3 = float(pp3) * distribution['a3']
             pp4 = BS.main4(a4_path, pos1)
-            if indicator and pp4 is not None:
+            if indicator and distribution and pp4 is not None:
                 pp4 = float(pp4) * distribution['a4']
             pp5 = BS.main4(a5_path, pos2)
-            if indicator and pp5 is not None:
+            if indicator and distribution and pp5 is not None:
                 pp5 = float(pp5) * distribution['a5']
 
             if (pp1 != None and pp2 != None and pp3 != None and pp4 != None and pp5 != None):
