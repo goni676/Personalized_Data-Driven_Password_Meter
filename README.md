@@ -1,12 +1,11 @@
 # spp_password_meter
 Country-based personalized data-driven password meter, based on [PESrank model](https://github.com/lirondavid/PESrank)
 ## Installation
+* Unzip PPESrank-master into a directory of your choise.
 * Run:
   ```bash
   pip install -r requirements.txt
   ```
-* Unzip PPESrank-master into a directory of your choise.
-
 ## Run the Python Server
 * In the terminal or command prompt, navigate to your project folder and run the Python server:
   ```bash
