@@ -23,7 +23,7 @@ def main_index(username, password, country):
     ex = 0
     country_n = {'france': 35841680, 'spain': 4535996, 'germany': 50650725, 'china': 568318, 'uk': 21134994}
     if country_indicator:
-        n = country_n[country]
+        n = country_n[lowercase_country]
     indicators = [1, 1, 0, 0, 0, 0]
     info_list = [1]
     feedback1 = "Your password is "
