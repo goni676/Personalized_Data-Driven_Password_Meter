@@ -21,7 +21,9 @@ def main_index(username, password, country):
     rank, explain, country_indicator = PESrank_new.main(password, os.getcwd(), '5000', country=lowercase_country)
     n = 905 * (10 ** 6)
     ex = 0
-    country_n = {}
+    country_n = {'france': 35841680, 'spain': 4535996, 'germany': 50650725, 'china': 568318, 'uk': 21134994}
+    if country indicator:
+        n = country_n[country]
     indicators = [1, 1, 0, 0, 0, 0]
     info_list = [1]
     feedback1 = "Your password is "
