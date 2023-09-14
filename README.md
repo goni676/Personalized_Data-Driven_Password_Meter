@@ -23,3 +23,8 @@ Country-based personalized data-driven password meter, based on [PESrank model](
 * Once you see this output, your Flask server is up and running and ready to handle incoming HTTP requests.
 * To access the Flask application, open a web browser and enters the URL of the application in the address bar.
   This URL typically consists of the host and port where your Flask server is running (e.g., http://127.0.0.1:5000/ or http://localhost:5000/).
+
+## Flask Application Illustration
+In the following [video](https://app.usebubbles.com/rcwAKvEDhag61BCBnMADBR), you can witness the process of entering the password "Chelsea" within a country that lacks a corresponding model, initially set to 'Argentina' as the selected country. Subsequently, the video showcases the resulting score after changing the country to the UK, with 'Chelsea' recognized as one of the frequently used passwords.
+
+
