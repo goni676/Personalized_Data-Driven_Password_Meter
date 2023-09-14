@@ -18,7 +18,7 @@ Country-based personalized data-driven password meter, based on [PESrank model](
    * Environment: development
    * Debug mode: on
    * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-```
+  ```
 ## Accessing the Flask Application
 * Once you see this output, your Flask server is up and running and ready to handle incoming HTTP requests.
 * To access the Flask application, open a web browser and enters the URL of the application in the address bar.
